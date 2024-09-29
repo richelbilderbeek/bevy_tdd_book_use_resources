@@ -21,8 +21,7 @@ pub fn create_app(initial_my_value: i32) -> App {
 }
 
 
-#[cfg(test)]
-fn get_my_value(app: &mut App) -> i32 {
+pub fn get_my_value(app: &mut App) -> i32 {
     app.world().resource::<MyResource>().my_value
 }
 
