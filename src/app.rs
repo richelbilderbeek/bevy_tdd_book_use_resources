@@ -16,7 +16,7 @@ impl Default for GoalsReached {
     }
 }
 
-pub fn create_defeault_app() -> App {
+pub fn create_default_app() -> App {
     create_app(0)
 }
 
