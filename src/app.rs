@@ -3,7 +3,6 @@ use bevy::prelude::*;
 
 #[derive(Resource)]
 pub struct MyResource {
-    #[cfg(test)]
     my_value: i32,
 }
 
