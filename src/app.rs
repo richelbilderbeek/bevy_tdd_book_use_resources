@@ -53,5 +53,6 @@ mod tests {
         let mut app = create_app(my_resource);
         app.update();
         assert_eq!(get_my_resource(&mut app).my_value, value);
+        assert_eq!(get_my_value(&mut app), value);
     }
 }
