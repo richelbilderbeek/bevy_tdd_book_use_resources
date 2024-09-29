@@ -21,8 +21,12 @@ pub fn create_app(initial_my_value: i32) -> App {
 }
 
 
+pub fn get_my_resource(app: &mut App) -> &MyResource {
+    app.world().resource::<MyResource>()
+}
+
 pub fn get_my_value(app: &mut App) -> i32 {
-    app.world().resource::<MyResource>().my_value
+    get_my_resource(app).my_value
 }
 
 
