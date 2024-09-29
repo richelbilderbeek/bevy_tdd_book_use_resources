@@ -14,7 +14,9 @@ The goal of this chapter is to use a Bevy resource:
 
 - [Unofficial Bevy Cheat Book](https://bevy-cheatbook.github.io/programming/res.html)
 
-> No screenshot yet
+![Screenshot of this game](use_resources.png)
+
+> Screenshot of this game. Indeed, it is only an empty window :-)
 
 ## Setup
 
