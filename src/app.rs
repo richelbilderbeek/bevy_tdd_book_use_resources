@@ -13,22 +13,10 @@ pub fn create_default_app() -> App {
 pub fn create_app(initial_my_value: i32) -> App {
     let mut app = App::new();
 
-    // Only add these plugin in testing.
-    // The main app will assume it to be absent.
-    // Adding DefaultPlugins will cause tests to crash
-    if cfg!(test) {
-        //app.add_plugins(bevy::state::app::StatesPlugin);
-    } else {
-        app.add_plugins(DefaultPlugins);
-    }
-
     app.insert_resource(MyResource { my_value: initial_my_value} );
 
-
     // NO! Do not update!
-    // text will be invisible in main
     //app.update();
-
     app
 }
 
@@ -50,13 +38,13 @@ mod tests {
 
 
     #[test]
-    fn test_app_starts_with_no_my_value() {
+    fn test_app_starts_with_default_value() {
         let mut app = create_default_app();
         app.update();
         assert_eq!(get_my_value(&mut app), 0);
     }
     #[test]
-    fn test_app_can_have_an_initial_my_value() {
+    fn test_app_can_have_an_initial_value() {
         let my_value = 314;
         let mut app = create_app(my_value);
         app.update();
