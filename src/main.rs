@@ -3,7 +3,7 @@ use bevy::prelude::*;
 mod app;
 
 fn main() {
-    let mut app = create_app();
+    let mut app = create_default_app();
     let add_camera_fn = |mut commands: Commands| {
         commands.spawn(Camera2dBundle::default());
     };

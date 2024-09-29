@@ -16,7 +16,11 @@ impl Default for GoalsReached {
     }
 }
 
-pub fn create_app() -> App {
+pub fn create_defeault_app() -> App {
+    create_app(0)
+}
+
+pub fn create_app(initial_bonus: u32) -> App {
     let mut app = App::new();
 
     // Only add these plugin in testing.
@@ -40,7 +44,7 @@ pub fn create_app() -> App {
 
 #[cfg(test)]
 fn get_bonus(app: &mut App) -> u32 {
-    app.world().resource::<GoalsReached>().get().
+    app.world().resource::<GoalsReached>().get().clone().bonus
 }
 
 
@@ -63,7 +67,7 @@ mod tests {
 
     #[test]
     fn test_app_starts_with_no_bonus() {
-        let mut app = create_app();
+        let mut app = create_default_app();
         app.update();
         assert_eq!(get_bonus(&mut app), 0);
     }
