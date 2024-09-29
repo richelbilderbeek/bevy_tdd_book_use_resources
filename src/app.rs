@@ -7,13 +7,13 @@ pub struct MyResource {
 }
 
 pub fn create_default_app() -> App {
-    create_app(0)
+    create_app(MyResource { my_value:0 } )
 }
 
-pub fn create_app(initial_my_value: i32) -> App {
+pub fn create_app(initial_my_resource: MyResource) -> App {
     let mut app = App::new();
 
-    app.insert_resource(MyResource { my_value: initial_my_value} );
+    app.insert_resource(initial_my_resource);
 
     // NO! Do not update!
     //app.update();
@@ -48,9 +48,10 @@ mod tests {
     }
     #[test]
     fn test_app_can_have_an_initial_value() {
-        let my_value = 314;
-        let mut app = create_app(my_value);
+        let value = 314;
+        let my_resource = MyResource { my_value: value};
+        let mut app = create_app(my_resource);
         app.update();
-        assert_eq!(get_my_value(&mut app), my_value);
+        assert_eq!(get_my_resource(&mut app).my_value, value);
     }
 }
