@@ -14,7 +14,7 @@ The goal of this chapter is to use a Bevy resource:
 
 - [Unofficial Bevy Cheat Book](https://bevy-cheatbook.github.io/programming/res.html)
 
-![Screenshot of this application](add_resources.png)
+> No screenshot yet
 
 ## Setup
 
